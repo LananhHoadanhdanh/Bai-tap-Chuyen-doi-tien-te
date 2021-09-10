@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+    <style>
+        td, th{
+            width: 25%;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<table style="width: 600px; height: 80px" align="left">
+    <tr>
+        <th>Amount</th>
+        <th>From currency</th>
+        <th>To currency</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td><input type="text" value="1" style="width: 50px" id="dauvao"></td>
+        <td><select id="tiennguon">
+            <option value="vnd">VND</option>
+            <option value="usd">USD</option>
+        </select>
+        </td>
+        <td><select id="tiendich">
+            <option value="vnd">VND</option>
+            <option value="usd">USD</option>
+        </select>
+        </td>
+        <td><button style="background: #acc9ff" onclick="tinhtien()">Convert</button></td>
+    </tr>
+    <tr>
+        <td>Kết quả:</td>
+        <td colspan="3" id="ketqua"></td>
+    </tr>
+</table>
+<script>
+    function tinhtien() {
+        let sotien = document.getElementById("dauvao").value;
+        a = sotien * 22760;
+        b = sotien / 22760;
+        c = sotien;
+        let vao = document.getElementById("tiennguon").value;
+        let ra = document.getElementById("tiendich").value;
+        if(vao==ra) {
+        document.getElementById("ketqua").innerHTML=c;
+        }
+        else {
+            if (vao=="vnd") {
+                document.getElementById("ketqua").innerHTML=b;
+            }
+            else {
+                document.getElementById("ketqua").innerHTML=a;
+            }
+        }
+    }
+</script>
+</body>
+</html>
